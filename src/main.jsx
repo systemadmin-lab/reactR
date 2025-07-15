@@ -6,7 +6,7 @@ import ErrorPage from "./Error.jsx";
 import "./index.css";
 import Root from "./Root.jsx";
 import { getContactLoader, getContactsLoader } from "./loaders/contactsLoader.js";
-import { createContactAction } from "./actions/contactsActions.js";
+import { createContactAction, deleteContactAction, editContactAction } from "./actions/contactsActions.js";
 import EditContact from "./EditContact.jsx";
 const router = createBrowserRouter([
   {
@@ -25,6 +25,12 @@ const router = createBrowserRouter([
         path: "/contacts/:contacId/edit",
         element: <EditContact/>,
         loader:getContactsLoader,
+        action:editContactAction,
+      },
+       {
+        path: "/contacts/:contacId/destroy",
+        action:deleteContactAction,
+        errorElement:<>ops there was an error joy Bangla</>
       },
     ],
   },
