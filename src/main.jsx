@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './Root.jsx'
 import ErrorPage from './Error.jsx'
+import Contact from './Contact.jsx'
 const router =createBrowserRouter([
   {
     path: '/',
@@ -12,8 +13,9 @@ const router =createBrowserRouter([
     errorElement:<ErrorPage/>,
   },
   {
-    path:'/about',
-    element: <>churani chruani kali nagin jese </>
+    path:'/contacts/:contacId',
+    element:<Contact/>,
+   
   }
 ]
 )
