@@ -1,7 +1,7 @@
-import { Link, Outlet,useLoaderData } from "react-router-dom";
+import { Form, Link, Outlet, useLoaderData } from "react-router-dom";
 
 export default function Root() {
-    const {contacts}=useLoaderData();
+  const { contacts } = useLoaderData();
   return (
     <>
       <div id="sidebar">
@@ -15,15 +15,8 @@ export default function Root() {
               type="search"
               name="q"
             />
-            <div
-              id="search-spinner"
-              aria-hidden
-              hidden={true}
-            />
-            <div
-              className="sr-only"
-              aria-live="polite"
-            ></div>
+            <div id="search-spinner" aria-hidden hidden={true} />
+            <div className="sr-only" aria-live="polite"></div>
           </form>
           <Form method="post">
             <button type="submit">New</button>
@@ -54,7 +47,9 @@ export default function Root() {
           )}
         </nav>
       </div>
-      <div id="detail"><Outlet/></div>
+      <div id="detail">
+        <Outlet />
+      </div>
     </>
   );
 }
