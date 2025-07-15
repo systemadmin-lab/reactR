@@ -6,12 +6,14 @@ import ErrorPage from "./Error.jsx";
 import "./index.css";
 import Root from "./Root.jsx";
 import { getContactLoader } from "./loaders/contactsLoader.js";
+import { createContactAction } from "./actions/contactsActions.js";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     loader:getContactLoader,
+    action:createContactAction,
     children: [
       {
         path: "/contacts/:contacId",
